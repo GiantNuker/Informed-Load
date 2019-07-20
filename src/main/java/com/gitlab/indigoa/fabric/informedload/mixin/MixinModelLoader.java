@@ -2,6 +2,7 @@ package com.gitlab.indigoa.fabric.informedload.mixin;
 
 import com.gitlab.indigoa.fabric.informedload.TaskList;
 import net.minecraft.block.Block;
+import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.client.render.model.BakedModel;
 import net.minecraft.client.render.model.ModelBakeSettings;
 import net.minecraft.client.render.model.ModelLoader;
@@ -86,7 +87,7 @@ public class MixinModelLoader {
         //}
     }
     @Inject(method = "<init>", at = @At("RETURN"))
-    private void initDone(ResourceManager resourceManager, SpriteAtlasTexture spriteAtlasTexture, Profiler profiler, CallbackInfo ci) {
+    private void initDone(ResourceManager resourceManager, SpriteAtlasTexture spriteAtlasTexture, BlockColors colors, Profiler profiler, CallbackInfo ci) {
         //TaskList.removeTask("addmodels");
     }
     @Inject(method = "upload(Lnet/minecraft/util/profiler/Profiler;)V", at = @At("HEAD"))
